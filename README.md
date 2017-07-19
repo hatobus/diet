@@ -50,13 +50,16 @@ elif r % 2 == 1:
     fat = float(input())
 
 day_sum = len(df.index)
-maxweight = max(df['体重'])
-sabun = round(maxweight, 5) - weight
+minweight = max(df['体重'])
+sabun = round(minweight, 5) - weight
 sabun = round(sabun,5)
 BMI = round(weight/(1.735*1.735),5)
 print("体重の差は {0} kg です.BMIは{1}ですよ〜！".format(sabun,BMI))
 
-# print(hiduke, day_sum, weight, sabun)
+plt.plot(df.体重)
+plt.plot(df.体脂肪率)
+plt.plot(df.BMI)
+plt.savefig("data.png")
 
 df2 = pd.Series([day_sum,hiduke,weight,sabun,fat,BMI],index=['日数','日付','体重','差分','体脂肪率','BMI'])
 df = df.append(df2,ignore_index=True)
