@@ -27,7 +27,7 @@ elif r % 2 == 1:
     fat = float(input())
 
 day_sum = len(df.index)
-minweight = min(df['体重'])
+minweight = max(df['体重'])
 sabun = round(minweight, 5) - weight
 sabun = round(sabun,5)
 BMI = round(weight/(1.735*1.735),5)
