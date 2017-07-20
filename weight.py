@@ -33,12 +33,13 @@ sabun = round(sabun,5)
 BMI = round(weight/(1.735*1.735),5)
 print("体重の差は {0} kg です.BMIは{1}ですよ〜！".format(sabun,BMI))
 
+df2 = pd.Series([day_sum,hiduke,weight,sabun,fat,BMI],index=['日数','日付','体重','差分','体脂肪率','BMI'])
+df = df.append(df2,ignore_index=True)
+
+df.to_csv('./pic/weightdata.csv')
+
 plt.plot(df.体重)
 plt.plot(df.体脂肪率)
 plt.plot(df.BMI)
 plt.savefig("data.png")
 
-df2 = pd.Series([day_sum,hiduke,weight,sabun,fat,BMI],index=['日数','日付','体重','差分','体脂肪率','BMI'])
-df = df.append(df2,ignore_index=True)
-
-df.to_csv('../pic/weightdata.csv')
