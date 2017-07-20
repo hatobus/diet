@@ -41,4 +41,4 @@ plt.savefig("data.png")
 df2 = pd.Series([day_sum,hiduke,weight,sabun,fat,BMI],index=['日数','日付','体重','差分','体脂肪率','BMI'])
 df = df.append(df2,ignore_index=True)
 
-df.to_csv('weightdata.csv')
+df.to_csv('../pic/weightdata.csv')
