@@ -9,22 +9,9 @@ df = pd.read_csv("weightdata.csv",sep=",",index_col=0)
 
 hiduke = datetime.date.today()
 
-r = random.randint(0, 10)
-
-if r % 2 == 0:
-    print("今日の体重と体脂肪率を入力してください．")
-    weight = float(input())
-    fat = float(input())
-
-elif r % 2 == 0 and r % 3 == 0:
-    print("今日の体重を入力してください！はとバスさん！")
-    weight = float(input())
-    fat = float(input())
-
-elif r % 2 == 1:
-    print("体重を入力してぇ，はとバス")
-    weight = float(input())
-    fat = float(input())
+print (random.choice(['今日の体重と体脂肪率を入力してください．', '今日の体重を入力してください！はとバスさん！', '体重を入力してぇ，はとバス']))
+weight = float(input())
+fat = float(input())
 
 day_sum = len(df.index)
 minweight = max(df['体重'])
